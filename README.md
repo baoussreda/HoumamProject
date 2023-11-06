@@ -20,7 +20,7 @@ Before proceeding with the installation, ensure that the following software is i
 
 2. Navigate to the project directory:
    ```
-   cd pfea8
+   cd HoumamProject
    ```
 
 3. Build and run the Docker containers using Docker Compose:
