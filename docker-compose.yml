@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: ./sql
+      dockerfile: dockerfile
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: pfe
+    container_name: mydb
+    volumes:
+      - ./sql/data:/docker-entrypoint-initdb.d
+    image: bsreda001/pfea8_data
+
+  web:
+    build:
+      context: ./php
+      dockerfile: dockerfile
+    container_name: php_web
+    depends_on:
+      - db
+    volumes:
+      - ./php/src:/var/www/html
+    ports:
+      - "8100:80"
+    image: bsreda001/pfea8_php
+      
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8001:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
