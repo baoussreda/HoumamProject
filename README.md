@@ -20,7 +20,7 @@ Before proceeding with the installation, ensure that the following software is i
 
 2. Navigate to the project directory:
    ```
-   cd HoumamProjectgggg
+   cd HoumamProjectggggsss
    ```
 
 3. Build and run the Docker containers using Docker Compose:
