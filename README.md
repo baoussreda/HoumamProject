@@ -15,7 +15,7 @@ Before proceeding with the installation, ensure that the following software is i
 
 1. Clone the repository to your local machine:
    ```
-   git clone https://github.com/M07amedinc/pfea8.git
+   git clone https://github.com/baoussreda/HoumamProject.git
    ```
 
 2. Navigate to the project directory:
