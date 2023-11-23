@@ -4,6 +4,8 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('52548f71-7aac-467e-bcf6-5d934399133f')
     ACR_REGISTRY = "reda0011.azurecr.io"  // Mettez à jour avec votre nom de registre Azure
+    PATH = "${tool 'Azure CLI'}/bin:${env.C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin}"
+
 
   }
   stages {
@@ -37,7 +39,7 @@ pipeline {
         script {
           // Obtain Azure service principal credentials
           withCredentials([azureServicePrincipal('06b3fde6-9b07-41d5-99ce-2da9c0260612')]) {
-          bat 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+          bat "az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID"
         
 
         // Log in to Azure Container Registry
