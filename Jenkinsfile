@@ -37,14 +37,14 @@ pipeline {
         script {
           // Obtain Azure service principal credentials
           withCredentials([azureServicePrincipal('06b3fde6-9b07-41d5-99ce-2da9c0260612')]) {
-          sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+          bat 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
         
 
         // Log in to Azure Container Registry
-        sh "docker login $ACR_REGISTRY -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID"
+        bat "docker login $ACR_REGISTRY -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID"
 
         // Push Docker images using docker-compose
-        sh "docker-compose push"
+        bat "docker-compose push"
           }
         }
       }
