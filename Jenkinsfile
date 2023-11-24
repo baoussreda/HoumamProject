@@ -44,7 +44,7 @@ pipeline {
         
           }
         // Log in to Azure Container Registry
-        bat 'docker login reda0011.azurecr.io -u <reda0011> -p <6kW18zFxeD3oFK624CYv19sVYyD8JfTQ5rszs7pNEz+ACRC12nnP>'
+        bat 'docker login reda0011.azurecr.io -u reda0011 -p 6kW18zFxeD3oFK624CYv19sVYyD8JfTQ5rszs7pNEz+ACRC12nnP'
 
         // Push Docker images using docker-compose
         bat 'docker-compose push'
