@@ -1,13 +1,18 @@
 pipeline {
   agent any
+  tools {
+    // Define the Azure CLI tool
+    azureCli 'Azure CLI'
+}
+
 
   environment {
     DOCKERHUB_CREDENTIALS = credentials('52548f71-7aac-467e-bcf6-5d934399133f')
     ACR_REGISTRY = "reda0011.azurecr.io"  // Mettez à jour avec votre nom de registre Azure
     PATH = "${tool 'Azure CLI'}/bin:${env['C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin']}"
 
-
   }
+  
   stages {
     stage('Checkout code') {
       steps {
@@ -60,7 +65,7 @@ pipeline {
     }
   }
 
-  post {
+ /* post {
     success {
       mail bcc: '', body: '''Le pipeline Jenkins s\'est execute avec succes. 
       Tout s\'est deroule sans erreur.
@@ -72,5 +77,5 @@ pipeline {
       Veuillez prendre les mesures nécessaires pour resoudre le probleme.
       ''', subject: 'Sujet : Echec du pipeline Jenkins', to: 'bsreda87@gmail.com'
     }
-  }
+  }*/
 }
