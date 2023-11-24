@@ -20,6 +20,9 @@ pipeline {
       steps {
         bat 'docker-compose build'
         bat 'start docker-compose up -d'
+        bat 'docker-compose2 build'
+        bat 'start docker-compose up -d'
+
       }
     }
 
