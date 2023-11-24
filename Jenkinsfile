@@ -51,7 +51,7 @@ pipeline {
           }
         }
       }
-    }
+    
     
 
     stage('Cleanup') {
@@ -59,6 +59,7 @@ pipeline {
         bat 'docker-compose down'
       }
     }
+  }
   }
 
  /* post {
