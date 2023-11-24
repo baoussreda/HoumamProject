@@ -39,7 +39,7 @@ pipeline {
       steps {
         script {
           // Obtain Azure service principal credentials
-          withCredentials([azureServicePrincipal('credentials_id')]){
+          withCredentials([azureServicePrincipal('06b3fde6-9b07-41d5-99ce-2da9c0260612')]){
           bat "az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID"
         
           }
