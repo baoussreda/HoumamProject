@@ -39,10 +39,10 @@ pipeline {
       steps {
         script {
           // Obtain Azure service principal credentials
-          withCredentials([azureServicePrincipal(credentialsId: '06b3fde6-9b07-41d5-99ce-2da9c0260612', tenantId: AZURE_TENANT_ID)]) {
+          withCredentials([azureServicePrincipal('credentials_id')]){
           bat "az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID"
         
-
+          }
         // Log in to Azure Container Registry
         bat "docker login reda0011.azurecr.io -u <reda0011> -p <6kW18zFxeD3oFK624CYv19sVYyD8JfTQ5rszs7pNEz+ACRC12nnP>"
 
