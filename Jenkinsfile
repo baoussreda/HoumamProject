@@ -75,4 +75,3 @@ pipeline {
       ''', subject: 'Sujet : Echec du pipeline Jenkins', to: 'bsreda87@gmail.com'
     }
   }*/
-}
