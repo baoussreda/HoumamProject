@@ -20,8 +20,7 @@ pipeline {
       steps {
         bat 'docker-compose build'
         bat 'start docker-compose up -d'
-        bat 'docker-compose2 build'
-        bat 'start docker-compose up -d'
+
 
       }
     }
@@ -32,12 +31,12 @@ pipeline {
       }
     }
 
-    stage('Push Images to Docker Hub') {
+    /*stage('Push Images to Docker Hub') {
       steps {
         bat 'echo %DOCKERHUB_CREDENTIALS_PSW%| docker login -u %DOCKERHUB_CREDENTIALS_USR% --password-stdin'
         bat 'docker-compose push'
       }
-    }
+    }*/
     stage('Push Images to Azure Container Registry') {
       steps {
         script {
@@ -50,7 +49,7 @@ pipeline {
         bat 'docker login reda0011.azurecr.io -u reda0011 -p 6kW18zFxeD3oFK624CYv19sVYyD8JfTQ5rszs7pNEz+ACRC12nnP'
 
         // Push Docker images using docker-compose
-        bat 'docker-compose -f docker-compose2.yml push'
+        bat 'docker-compose push'
           }
         }
       }

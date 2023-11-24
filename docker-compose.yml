@@ -11,7 +11,7 @@ services:
     container_name: mydb
     volumes:
       - ./sql/data:/docker-entrypoint-initdb.d
-    image: bsreda001/pfea8_data
+    image: reda0011.azurecr.io/pfea8_data
 
   web:
     build:
@@ -24,7 +24,7 @@ services:
       - ./php/src:/var/www/html
     ports:
       - "8100:80"
-    image: bsreda001/pfea8_php
+    image: reda0011.azurecr.io/pfea8_php
       
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
