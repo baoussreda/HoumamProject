@@ -40,7 +40,7 @@ pipeline {
         script {
           // Obtain Azure service principal credentials
           withCredentials([azureServicePrincipal('06b3fde6-9b07-41d5-99ce-2da9c0260612')]){
-          bat 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t f0c4b24d-851a-4404-9623-7e138b887664'
+          bat 'az login --service-principal -u f1cb01a8-5aff-4132-81d2-8cbfb4e1171f -p $AZURE_CLIENT_SECRET -t f0c4b24d-851a-4404-9623-7e138b887664'
         
           }
         // Log in to Azure Container Registry
